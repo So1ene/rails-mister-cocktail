@@ -1,7 +1,7 @@
 <h1>Add an ingredient to cocktail "<%= @cocktail.name %>":</h1>
 
 <%= simple_form_for([@cocktail, @dose]) do |f| %>
-  <%= f.input :ingredient, :collection => Ingredient.all.map { |ingredient| ingredient.name } %>
+  <%= f.association :ingredient %>
   <%= f.input :description %>
   <%= f.submit %>
 <% end %>
