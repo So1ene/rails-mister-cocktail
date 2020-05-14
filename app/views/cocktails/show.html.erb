@@ -1,0 +1,26 @@
+<h1><%= @cocktail.name %></h1>
+<ul>
+  <% @cocktail.doses do |dose| %>
+    <li><%= dose.ingredient %>: <%= dose.description %></li>
+  <% end %>
+</ul>
+
+<h2>Ingredients:</h2>
+
+<ul>
+  <% @cocktail.doses.each do |dose| %>
+    <li class="my-3"><%= dose.ingredient.name %>: <%= dose.description %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to "Back", cocktails_path, class: "btn btn-secondary" %>
+
+
+<p>Add an ingredient:</p>
+
+<%= simple_form_for([@cocktail, Dose.new]) do |f| %>
+  <%= f.input :ingredient, :collection => @ingredients.map { |ingredient| ingredient[:name] } %>
+  <%= f.input :description %>
+  <%= f.submit %>
+<% end %>
