@@ -1,0 +1,9 @@
+<h1>Add an ingredient to cocktail "<%= @cocktail.name %>":</h1>
+
+<%= simple_form_for([@cocktail, @dose]) do |f| %>
+  <%= f.input :ingredient, :collection => Ingredient.all.map { |ingredient| ingredient.name } %>
+  <%= f.input :description %>
+  <%= f.submit %>
+<% end %>
+<br />
+<%= link_to "Cancel", cocktail_path(@cocktail), class: "btn btn-secondary" %>

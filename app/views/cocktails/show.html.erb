@@ -1,26 +1,14 @@
-<h1><%= @cocktail.name %></h1>
-<ul>
-  <% @cocktail.doses do |dose| %>
-    <li><%= dose.ingredient %>: <%= dose.description %></li>
-  <% end %>
-</ul>
+<h1><%= @cocktail.name %> Cocktail</h1>
 
-<h2>Ingredients:</h2>
+<p><%= link_to "Add an ingredient", new_cocktail_dose_path(@cocktail), class: "btn btn-secondary" %></p>
+
+
+<h2>Ingredient:</h2>
 
 <ul>
   <% @cocktail.doses.each do |dose| %>
-    <li class="my-3"><%= dose.ingredient.name %>: <%= dose.description %>
-    </li>
+    <li><%= dose.ingredient.name %>: <%= dose.description %> <%= link_to "Delete", dose_path, method: 'delete' %></li>
   <% end %>
 </ul>
 
 <%= link_to "Back", cocktails_path, class: "btn btn-secondary" %>
-
-
-<p>Add an ingredient:</p>
-
-<%= simple_form_for([@cocktail, Dose.new]) do |f| %>
-  <%= f.input :ingredient, :collection => @ingredients.map { |ingredient| ingredient[:name] } %>
-  <%= f.input :description %>
-  <%= f.submit %>
-<% end %>
