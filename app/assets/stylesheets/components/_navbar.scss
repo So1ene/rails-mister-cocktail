@@ -1,5 +1,27 @@
 .navbar {
-  justify-content: space-between;
-  background: white;
-  height: 20px
+  justify-content: center;
+  background: rgba(25, 2, 20, 1);
+  padding: 0;
+  height: 20px;
+  position: relative;
+}
+
+.btn-navbar {
+  border-radius: 4px;
+  color: white;
+  margin: 0;
+  padding: 6px 40px;
+  background: rgb(110,100,100);
+  display: inline-block;
+  position: relative;
+  top: -6px;
+  border: 2px solid rgba(25, 2, 20, 1);
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+.btn-navbar:hover {
+  text-decoration: none;
+  background: rgba(220, 170, 0, 1);
+  color: rgba(25, 2, 20, 1);
 }
