@@ -3,7 +3,7 @@
 <div class="container">
   <div class="grid">
     <% @cocktails.each do |cocktail| %>
-      <%= link_to cocktail.name, cocktail_path(cocktail), class: "item" %>
+      <%= link_to cocktail_path(cocktail), class: "item" do%><span><%=cocktail.name%></span><%end%>
     <% end %>
   </div>
 </div>
