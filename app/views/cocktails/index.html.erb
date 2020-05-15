@@ -1,9 +1,9 @@
 <div class="navbar"><p><%= link_to "+ NEW COCKTAIL", new_cocktail_path, class: "btn-navbar" %></p></div>
 
-<div class="container"
-<ul>
+<div class="container">
+  <div class="grid">
     <% @cocktails.each do |cocktail| %>
-      <li><%= link_to cocktail.name, cocktail_path(cocktail) %></li>
+      <%= link_to cocktail.name, cocktail_path(cocktail), class: "item" %>
     <% end %>
-  </ul>
+  </div>
 </div>
