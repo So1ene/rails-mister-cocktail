@@ -1,10 +1,10 @@
+<div class="navbar"><p><%= link_to "CANCEL", cocktails_path, class: "btn-navbar" %></p></div>
+
 <div class="container">
   <h1>Add a cocktail:</h1>
 
   <%= simple_form_for(@cocktail) do |f| %>
     <%= f.input :name, label: "Name of cocktail", placeholder: "example: Gin Tonic" %>
-    <%= f.button :submit, 'Save', class: "btn btn-primary"%>
+    <%= f.button :submit, 'Save', class: "btn-navbar mt-3"%>
   <% end %>
-  <br />
-  <%= link_to "Cancel", cocktails_path, class: "btn btn-secondary" %>
 </div>
